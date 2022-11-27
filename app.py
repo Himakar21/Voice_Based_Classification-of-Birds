@@ -94,8 +94,8 @@ def predict():
                 y_true = max_index
             else:
                 y_true=12
-            
-            return render_template('home.html', prediction=str("Prediction by BirderAI :")+labels[y_true].upper(),imgsrc="http://127.0.0.1:8887/"+labels[y_true].upper()+".jpg")
+            print("http://127.0.0.1:8887/test/"+str(file.filename))
+            return render_template('home.html', prediction=str("Prediction by BirderAI :")+labels[y_true].upper(),imgsrc="http://127.0.0.1:8887/public/"+labels[y_true].upper()+".jpg",audiosrc="http://127.0.0.1:8887/test/"+str(file.filename))
 
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
