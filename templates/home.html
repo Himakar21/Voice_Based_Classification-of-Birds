@@ -16,7 +16,7 @@
 <body class="homepage">
 <br>
 <div >
-  <img src="http://127.0.0.1:8887/birderai.jpg" alt="BirderAI" id="loginimg">
+  <img src="http://127.0.0.1:8887/public/birderai.jpg" alt="BirderAI" id="loginimg">
   <h1 css="align='center'">{{name}}</h1><br><br>
   <h3><b>Can't find a bird name ? . BirderAI is there for you. Just upload an audio of that bird and find it's name .</b></h3>  
   <form action="{{ url_for('predict')}}" method="post" enctype="multipart/form-data" class="uploadaudio">
@@ -25,6 +25,11 @@
   </form>
 </div>
 <h2 class="prediction"><b>{{prediction}}</b></h2>
+<div class="preddiv">
 <img src={{imgsrc}} alt={{imgsrc}} class="predimg">
+<audio controls>
+  <source src={{audiosrc}} type="audio/wav">
+</audio>
+</div>
 </body>
 </html>
