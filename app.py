@@ -1,13 +1,11 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template , flash,redirect, url_for
-#import pickle
-#import os
+
 app = Flask(__name__)
 import IPython.display as ipd
 import librosa.display
 from tensorflow.keras.models import load_model
 model = load_model("C:\\Users\\LENOVO\\Desktop\\SE\\Project\\cnn_model1.hdf5")
-#model = pickle.load(open('model.pkl', 'rb'))
 labels = ['amewig','amewoo','amtspa','annhum','astfly','baisan','baleag','balori','banswa','barswa','bawwar','belkin1','Unknown']
 
 # Given an numpy array of features, zero-pads each ocurrence to max_padding
