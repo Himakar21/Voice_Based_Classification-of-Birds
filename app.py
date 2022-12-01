@@ -48,11 +48,6 @@ def predict():
     '''
     For rendering results on HTML GUI
     '''
-    """int_features = [int(x) for x in request.form.values()]
-    final_features = [np.array(int_features)]
-    prediction = model.predict(final_features)
-
-    output = round(prediction[0], 2)"""
     UPLOAD_FOLDER = 'C:/Users/LENOVO/Desktop/SE/Project/test'
     ALLOWED_EXTENSIONS = {'wav'}
     if request.method == 'POST':
@@ -95,16 +90,6 @@ def predict():
             print("http://127.0.0.1:8887/test/"+str(file.filename))
             return render_template('home.html', prediction=str("Prediction by BirderAI :")+labels[y_true].upper(),imgsrc="http://127.0.0.1:8887/public/"+labels[y_true].upper()+".jpg",audiosrc="http://127.0.0.1:8887/test/"+str(file.filename))
 
-@app.route('/predict_api',methods=['POST'])
-def predict_api():
-    '''
-    For direct API calls trought request
-    '''
-    data = request.get_json(force=True)
-    #prediction = model.predict([np.array(list(data.values()))])
-
-    #output = prediction[0]
-    #return jsonify(output)
 
 if __name__ == "__main__":
     app.run(debug=True)
